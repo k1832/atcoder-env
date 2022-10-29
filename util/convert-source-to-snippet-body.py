@@ -13,5 +13,7 @@ if __name__ == "__main__":
     full_path = os.path.join(base_path, file_name)
 
     lines = open(file_name).readlines()
+
+    # TODO(k1832): Maybe str.replace can replace this
     output = ",\n".join(['"' + escape_pattern.sub(r'\\\1', s[:-1]) + '"' for s in lines])
     print(output)
