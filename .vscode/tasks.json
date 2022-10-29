@@ -1,0 +1,202 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Main",
+            "type": "shell",
+            "command": "g++ -std=c++17 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
+            "group": "build"
+        },
+        {
+            "label": "Build Main To Debug",
+            "type": "shell",
+            "command": "g++ -std=c++17 -g3 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
+            "group": "test"
+        },
+        {
+            "label": "Build and Run",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}.out",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "dependsOn": [
+                "Build Main"
+            ]
+        },
+        {
+            "label": "oj LOGIN AtCoder",
+            "type": "shell",
+            "command": "oj login https://atcoder.jp/",
+            "group": "none"
+        },
+        {
+            "label": "_Delete test cases",
+            "type": "shell",
+            "hide": true,
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "rm -rf test/",
+            "group": "test"
+        },
+        {
+            "label": "oj DOWNLOAD",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "dependsOn": [
+                "_Delete test cases"
+            ],
+            "command": "oj download ${input:problemURL}",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "oj COPY template [C++]",
+            "type": "shell",
+            "command": "mv ./main.cpp ./main.cpp.bak; cp ./template/template.cpp ./main.cpp && code ./main.cpp",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "oj COPY template [Python]",
+            "type": "shell",
+            "command": "mv ./main.py ./main.py.bak; cp ./template/template.py ./main.py && code ./main.py",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "oj COPY INPUT generator",
+            "type": "shell",
+            "command": "cp ./template/generator.py ./input-generator.py && code ./input-generator.py",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "oj COPY OUTPUT generator",
+            "type": "shell",
+            "command": "cp ./template/generator.py ./output-generator.py && code ./output-generator.py",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "oj generate INPUT with current Python file",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "oj generate-input \"python3 ${file}\"",
+            "group": "test"
+        },
+        {
+            "label": "oj generate OUTPUT with current Python file",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "oj generate-output -c \"python3 ${file}\"",
+            "group": "test"
+        },
+        {
+            "label": "oj TEST [C++]",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "dependsOn": [
+                "Build Main"
+            ],
+            "command": "oj test -c \"${fileDirname}/${fileBasenameNoExtension}.out\"",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "group": "test"
+        },
+        {
+            "label": "oj TEST [Python]",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "oj test -c \"python3 ${file}\"",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "group": "test"
+        },
+        {
+            "label": "_oj submit current file",
+            "type": "shell",
+            "hide": true,
+            "command": "oj submit ${file}",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "group": "none"
+        },
+        {
+            "label": "oj SUBMIT [C++]",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "oj TEST [C++]",
+                "_oj submit current file"
+            ],
+            "command": "echo Submitted ${file}",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "oj SUBMIT [Python]",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "oj TEST [Python]",
+                "_oj submit current file"
+            ],
+            "command": "echo Submitted ${file}",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "Tmp task for test",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "echo \"${fileDirname}/${fileBasenameNoExtension}.out\"",
+            "group": "none",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "problemURL",
+            "type": "promptString",
+            "description": "Problem URL to download."
+        },
+    ],
+}
