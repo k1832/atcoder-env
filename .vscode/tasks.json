@@ -34,7 +34,8 @@
             "label": "oj LOGIN AtCoder",
             "type": "shell",
             "command": "oj login https://atcoder.jp/",
-            "group": "none"
+            "group": "none",
+            "problemMatcher": []
         },
         {
             "label": "_Delete test cases",
@@ -181,16 +182,16 @@
             "group": "none",
             "problemMatcher": []
         },
-        {
-            "label": "Tmp task for test",
-            "type": "shell",
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "command": "echo \"${fileDirname}/${fileBasenameNoExtension}.out\"",
-            "group": "none",
-            "problemMatcher": []
-        }
+        // {
+        //     "label": "Tmp task for test",
+        //     "type": "shell",
+        //     "options": {
+        //         "cwd": "${fileDirname}"
+        //     },
+        //     "command": "echo \"${fileDirname}/${fileBasenameNoExtension}.out\"",
+        //     "group": "none",
+        //     "problemMatcher": []
+        // }
     ],
     "inputs": [
         {
