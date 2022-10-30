@@ -1,19 +1,23 @@
 import re, sys, os
 
 if __name__ == "__main__":
-    # Search characters needed to be escaped
-    escape_pattern = re.compile(r'([\\"])')
-
     base_path = os.path.abspath(os.path.dirname(__file__))
 
-    file_name = "main.cpp"
-    if len(sys.argv) == 2:
-        file_name = sys.argv[1]
+    argc = len(sys.argv)
 
-    full_path = os.path.join(base_path, file_name)
+    # Resolve full_path
+    if argc == 1:
+        file_name = "main.cpp"
+        full_path = os.path.join(base_path, file_name)
+    elif argc == 2:
+        full_path = sys.argv[1]
+    else:
+        raise RuntimeError("Wrong number of arguments")
 
-    lines = open(file_name).readlines()
+    with open(full_path, mode='r') as f:
+        lines = [line.rstrip() for line in f.readlines()]
 
-    # TODO(k1832): Maybe str.replace can replace this
-    output = ",\n".join(['"' + escape_pattern.sub(r'\\\1', s[:-1]) + '"' for s in lines])
-    print(output)
+    # Search characters needed to be escaped
+    for i, line in enumerate(lines):
+        lines[i] = '"' + re.sub(r'([\\"])', r'\\\1', line) + '"'
+    print(",\n".join(lines))
