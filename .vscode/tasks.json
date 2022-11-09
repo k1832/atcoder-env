@@ -27,7 +27,7 @@
                 "clear": false
             },
             "dependsOn": [
-                "Build Main"
+                "Build Current C++ File"
             ]
         },
         {
@@ -113,7 +113,7 @@
                 "cwd": "${fileDirname}"
             },
             "dependsOn": [
-                "Build Main"
+                "Build Current C++ File"
             ],
             "command": "oj test -c \"${fileDirname}/${fileBasenameNoExtension}.out\"",
             "presentation": {

@@ -19,7 +19,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Build Main To Debug"
+            "preLaunchTask": "Build Current C++ File To Debug"
         }
     ]
 }
