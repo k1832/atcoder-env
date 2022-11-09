@@ -2,19 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build Main",
+            "label": "Build Current C++ File",
             "type": "shell",
             "command": "g++ -std=c++17 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
             "group": "build"
         },
         {
-            "label": "Build Main To Debug",
+            "label": "Build Current C++ File To Debug",
             "type": "shell",
             "command": "g++ -std=c++17 -g3 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
             "group": "test"
         },
         {
-            "label": "Build and Run",
+            "label": "Build Current C++ File and Run",
             "type": "shell",
             "command": "${fileDirname}/${fileBasenameNoExtension}.out",
             "group": "test",
