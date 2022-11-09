@@ -14,3 +14,8 @@ RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Pip
 RUN curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py && rm get-pip.py
 RUN pip3 install online-judge-tools
+
+# Precompile header file (reference: https://qiita.com/DaikiSuyama/items/e502e09a1090f4a2cee3)
+WORKDIR /usr/include/aarch64-linux-gnu/c++/10/bits
+RUN sudo  mkdir stdc++.h.gch
+RUN sudo g++ stdc++.h -std=c++17 -o stdc++.h.gch/stdc++_c++17.h.gch
