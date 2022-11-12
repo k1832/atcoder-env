@@ -1,0 +1,5 @@
+[
+    { "directory": "/workspaces/atcoder-env",
+      "arguments": ["/usr/bin/g++", "-std=c++17", "/workspaces/atcoder-env/main.cpp", "-o", "/workspaces/atcoder-env/main.out"],
+      "file": "main.cpp" }
+]

@@ -336,3 +336,6 @@ ASALocalRun/
 /*-generator.py
 
 test/
+
+# clangd related
+.cache/
