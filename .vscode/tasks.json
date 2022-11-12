@@ -35,7 +35,6 @@
             "type": "shell",
             "command": "oj login https://atcoder.jp/",
             "group": "none",
-            "problemMatcher": []
         },
         {
             "label": "_Delete test cases",
