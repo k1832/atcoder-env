@@ -35,6 +35,7 @@
             "type": "shell",
             "command": "oj login https://atcoder.jp/",
             "group": "none",
+            "problemMatcher": []
         },
         {
             "label": "_Delete test cases",
@@ -180,17 +181,7 @@
             "command": "echo Submitted ${file}",
             "group": "none",
             "problemMatcher": []
-        },
-        // {
-        //     "label": "Tmp task for test",
-        //     "type": "shell",
-        //     "options": {
-        //         "cwd": "${fileDirname}"
-        //     },
-        //     "command": "echo \"${fileDirname}/${fileBasenameNoExtension}.out\"",
-        //     "group": "none",
-        //     "problemMatcher": []
-        // }
+        }
     ],
     "inputs": [
         {
