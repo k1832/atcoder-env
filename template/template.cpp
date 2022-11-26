@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// #define int long long
 using ll = long long;
-#define int long long
 using P = pair<int, int>;
+template<class T> using min_heap = priority_queue<T, std::vector<T>, std::greater<T>>;
+template<class T> using max_heap = priority_queue<T, std::vector<T>>;
 
 #define LOG(variable) cerr << #variable":\t" << (variable) << "\n"
 #define LOGCON(i, container) for(int (i) = 0; (i) < (container).size(); ++(i)) cerr << (i) << ":\t" << (container)[(i)] << "\n"
@@ -21,12 +23,13 @@ using P = pair<int, int>;
 #define ALL(obj) (obj).begin(), (obj).end()
 #define MOD 1000000007
 #define PI (acos(-1))
-template<typename T = int>
-T in() {T a; cin >> a; return a;}
+
+template<class T = int> T in() {T a; cin >> a; return a;}
+
 /***** MAIN *****/
 signed main() {
 
-  cout << "\n";
-  return 0;
+    cout << "\n";
+    return 0;
 }
 /***** MAIN *****/
