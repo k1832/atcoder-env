@@ -15,7 +15,9 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"llvm-vs-code-extensions.vscode-clangd", "ms-python.python"
+		"llvm-vs-code-extensions.vscode-clangd",
+        "ms-python.python",
+        "VisualStudioExptTeam.vscodeintellicode"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
