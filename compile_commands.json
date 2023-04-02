@@ -1,5 +1,23 @@
 [
-    { "directory": "/workspaces/atcoder-env",
-      "arguments": ["/usr/bin/g++", "-std=c++17", "/workspaces/atcoder-env/main.cpp", "-o", "/workspaces/atcoder-env/main.out"],
-      "file": "main.cpp" }
+  {
+    "arguments": [
+      "/usr/bin/ccache",
+      "-c",
+      "g++",
+      "-std=c++17",
+      "-pedantic",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wsign-conversion",
+      "-Wconversion",
+      "-fstrict-aliasing",
+      "/workspaces/atcoder-env/main.cpp",
+      "-o",
+      "/workspaces/atcoder-env/main.out"
+    ],
+    "directory": "/workspaces/atcoder-env",
+    "file": "/workspaces/atcoder-env/main.cpp",
+    "output": "/workspaces/atcoder-env/main.o"
+  }
 ]
