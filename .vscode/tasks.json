@@ -8,7 +8,7 @@
              * TODO(k1832): Reconsider options. Currently using "strict" options given by ChatGPT.
              * TODO(k1832): Define variable that stores common compile options (maybe impossible right now).
              */
-            "command": "ccache g++ -std=c++17 -pedantic -Wall -Wextra -Werror -Wsign-conversion -Wconversion -fstrict-aliasing ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
+            "command": "ccache g++ -std=c++17 -pedantic -Wall -Wextra -Werror -fstrict-aliasing ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
             "group": "build"
         },
         {
@@ -18,7 +18,7 @@
              * TODO(k1832): Reconsider options. Currently using "strict" options given by ChatGPT.
              * TODO(k1832): Define variable that stores common compile options (maybe impossible right now).
              */
-            "command": "ccache g++ -std=c++17 -pedantic -Wall -Wextra -Werror -Wsign-conversion -Wconversion -fstrict-aliasing -g3 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
+            "command": "ccache g++ -std=c++17 -pedantic -Wall -Wextra -Werror -fstrict-aliasing -g3 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
             "group": "test"
         },
         {
