@@ -56,20 +56,40 @@
             "problemMatcher": []
         },
         {
+            "label": "_Delete input test cases",
+            "type": "shell",
+            "hide": true,
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "rm /workspaces/atcoder-env/test/*.in",
+            "group": "test"
+        },
+        {
+            "label": "_Delete output test cases",
+            "type": "shell",
+            "hide": true,
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "command": "rm /workspaces/atcoder-env/test/*.out | true",
+            "group": "test"
+        },
+        {
             "label": "_Delete test cases",
             "type": "shell",
             "hide": true,
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "command": "rm -rf test/",
+            "command": "rm -rf /workspaces/atcoder-env/test",
             "group": "test"
         },
         {
             "label": "oj DOWNLOAD",
             "type": "shell",
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "/workspaces/atcoder-env/"
             },
             "dependsOn": [
                 "_Delete test cases"
@@ -109,6 +129,9 @@
         {
             "label": "oj generate INPUT with current Python file",
             "type": "shell",
+            "dependsOn": [
+                "_Delete test cases"
+            ],
             "options": {
                 "cwd": "${fileDirname}"
             },
@@ -118,6 +141,9 @@
         {
             "label": "oj generate OUTPUT with current Python file",
             "type": "shell",
+            "dependsOn": [
+                "_Delete output test cases"
+            ],
             "options": {
                 "cwd": "${fileDirname}"
             },
