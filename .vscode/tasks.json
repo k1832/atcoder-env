@@ -191,7 +191,7 @@
             "label": "_oj submit current file",
             "type": "shell",
             "hide": true,
-            "command": "oj submit -y ${file}",
+            "command": "oj submit --no-open ${file}",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
