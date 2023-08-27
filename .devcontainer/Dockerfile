@@ -18,4 +18,4 @@ RUN pip3 install online-judge-tools
 # Precompile header file (reference: https://qiita.com/DaikiSuyama/items/e502e09a1090f4a2cee3)
 WORKDIR /usr/include/aarch64-linux-gnu/c++/10/bits
 RUN sudo mkdir stdc++.h.gch
-RUN sudo g++ stdc++.h -std=c++17 -o stdc++.h.gch/stdc++_c++17.h.gch
+RUN sudo g++ stdc++.h -std=c++20 -o stdc++.h.gch/stdc++_c++20.h.gch

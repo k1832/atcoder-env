@@ -8,7 +8,7 @@
              * TODO(k1832): Reconsider options. Currently using "strict" options given by ChatGPT.
              * TODO(k1832): Define variable that stores common compile options (maybe impossible right now).
              */
-            "command": "ccache g++ -std=c++17 -Wall -Wextra -Werror -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wdouble-promotion -Wformat=2 -Weffc++ -Wstrict-aliasing=2 -Wswitch-enum -Wunreachable-code -Wuseless-cast -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -fstack-protector-all ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
+            "command": "ccache g++ -std=c++20 -Wall -Wextra -Werror -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wdouble-promotion -Wformat=2 -Weffc++ -Wstrict-aliasing=2 -Wswitch-enum -Wunreachable-code -Wuseless-cast -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer -fstack-protector-all ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
             "group": "build"
         },
         {
@@ -18,7 +18,7 @@
              * TODO(k1832): Reconsider options. Currently using "strict" options given by ChatGPT.
              * TODO(k1832): Define variable that stores common compile options (maybe impossible right now).
              */
-            "command": "ccache g++ -std=c++17 -pedantic -Wall -Wextra -Werror -fstrict-aliasing ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
+            "command": "ccache g++ -std=c++20 -pedantic -Wall -Wextra -Werror -fstrict-aliasing ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
             "group": "build"
         },
         {
@@ -28,7 +28,7 @@
              * TODO(k1832): Reconsider options. Currently using "strict" options given by ChatGPT.
              * TODO(k1832): Define variable that stores common compile options (maybe impossible right now).
              */
-            "command": "ccache g++ -std=c++17 -pedantic -Wall -Wextra -Werror -fstrict-aliasing -g3 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
+            "command": "ccache g++ -std=c++20 -pedantic -Wall -Wextra -Werror -fstrict-aliasing -g3 ${file} -o ${fileDirname}/${fileBasenameNoExtension}.out",
             "group": "test"
         },
         {
