@@ -49,6 +49,23 @@
             ]
         },
         {
+            "label": "Build Current C++ File and Run with time",
+            "type": "shell",
+            "command": "time ${fileDirname}/${fileBasenameNoExtension}.out",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "dependsOn": [
+                "Build Current C++ File"
+            ]
+        },
+        {
             "label": "oj LOGIN AtCoder",
             "type": "shell",
             "command": "oj login https://atcoder.jp/",

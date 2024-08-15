@@ -25,6 +25,22 @@ template<class T> using max_heap = priority_queue<T, std::vector<T>>;
 #define PI (acos(-1))
 
 template<class T = int> T in() {T a; cin >> a; return a;}
+template <typename T>
+bool chmax(T &a, const T& b) {
+    if (a < b) {
+        a = b;
+        return true;
+    }
+    return false;
+}
+template <typename T>
+bool chmin(T &a, const T& b) {
+    if (a > b) {
+        a = b;
+        return true;
+    }
+    return false;
+}
 
 /***** MAIN *****/
 signed main() {
