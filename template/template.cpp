@@ -23,6 +23,8 @@ template<class T> using max_heap = priority_queue<T, std::vector<T>>;
 #define ALL(obj) (obj).begin(), (obj).end()
 #define MOD 1000000007
 #define PI (acos(-1))
+constexpr int DX[] = {1, 0, -1, 0};
+constexpr int DY[] = {0, 1, 0, -1};
 
 template<class T = int> T in() {T a; cin >> a; return a;}
 template <typename T>
